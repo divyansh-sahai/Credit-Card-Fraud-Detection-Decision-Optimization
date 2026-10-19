@@ -1,0 +1,5 @@
+actual_fraud,predicted_fraud,transaction_count
+0,0,42626
+0,1,44
+1,0,13
+1,1,39

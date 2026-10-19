@@ -1,0 +1,5 @@
+amount_band,total_transactions,actual_fraud_cases,flagged_transactions,true_positives,false_positives,false_negatives
+Under 25,24726,31,46,23,23,8
+25 to under 100,10928,9,11,8,3,1
+100 to under 500,5972,9,19,7,12,2
+500 and above,1096,3,7,1,6,2

@@ -1,0 +1,3 @@
+actual_fraud,transaction_count,mean_fraud_probability,minimum_fraud_probability,maximum_fraud_probability
+0,42670,0.001227,0.0,0.69423
+1,52,0.663849,0.0,0.984714
