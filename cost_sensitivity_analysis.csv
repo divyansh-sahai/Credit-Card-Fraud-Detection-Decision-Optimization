@@ -1,0 +1,13 @@
+Model,Missed Fraud Cost,False Positive Cost,Threshold,False Positives,Fraud Missed,Fraud Detected,Total Illustrative Cost
+Logistic Regression,5,1,0.98,57,7,49,92
+Logistic Regression,10,1,0.98,57,7,49,127
+Logistic Regression,20,1,0.98,57,7,49,197
+Logistic Regression,50,1,0.98,57,7,49,407
+Random Forest,5,1,0.21,6,10,46,56
+Random Forest,10,1,0.11,31,7,49,101
+Random Forest,20,1,0.09,49,6,50,169
+Random Forest,50,1,0.06,86,5,51,336
+XGBoost,5,1,0.9,1,12,44,61
+XGBoost,10,1,0.9,1,12,44,121
+XGBoost,20,1,0.31,46,9,47,226
+XGBoost,50,1,0.14,142,6,50,442
