@@ -1,0 +1,2 @@
+monitoring_timestamp_utc,transactions_monitored,transactions_flagged,flagged_transaction_rate,mean_fraud_probability,median_fraud_probability,threshold
+2026-10-19T08:48:38.357359+00:00,500,0,0.0,0.0012349942039452633,0.0,0.1

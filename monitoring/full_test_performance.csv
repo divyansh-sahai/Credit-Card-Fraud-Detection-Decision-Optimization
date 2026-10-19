@@ -1,0 +1,2 @@
+transactions_evaluated,actual_fraud_cases,predicted_fraud_cases,true_positives,false_positives,false_negatives,true_negatives,precision,recall,f1_score
+42722,52,83,39,44,13,42626,0.46987951807228917,0.75,0.5777777777777777

@@ -1,0 +1,69 @@
+{
+  "batch_summary": [
+    {
+      "monitoring_timestamp_utc": "2026-10-19T08:48:38.357359+00:00",
+      "transactions_monitored": 500,
+      "transactions_flagged": 0,
+      "flagged_transaction_rate": 0.0,
+      "mean_fraud_probability": 0.0012349942039452633,
+      "median_fraud_probability": 0.0,
+      "threshold": 0.1
+    }
+  ],
+  "feature_drift_warnings": [
+    {
+      "feature": "Time",
+      "psi": 12.433664760324888,
+      "warning": "Investigate feature drift"
+    },
+    {
+      "feature": "V1",
+      "psi": 1.1563710224249646,
+      "warning": "Investigate feature drift"
+    },
+    {
+      "feature": "V3",
+      "psi": 0.8721862206639318,
+      "warning": "Investigate feature drift"
+    },
+    {
+      "feature": "V11",
+      "psi": 0.2640600962964262,
+      "warning": "Investigate feature drift"
+    },
+    {
+      "feature": "V12",
+      "psi": 0.2791910169040543,
+      "warning": "Investigate feature drift"
+    },
+    {
+      "feature": "V15",
+      "psi": 0.27345780759062716,
+      "warning": "Investigate feature drift"
+    },
+    {
+      "feature": "V25",
+      "psi": 0.2961185987951304,
+      "warning": "Investigate feature drift"
+    },
+    {
+      "feature": "V28",
+      "psi": 0.47896276690386147,
+      "warning": "Investigate feature drift"
+    }
+  ],
+  "full_test_performance": [
+    {
+      "transactions_evaluated": 42722,
+      "actual_fraud_cases": 52,
+      "predicted_fraud_cases": 83,
+      "true_positives": 39,
+      "false_positives": 44,
+      "false_negatives": 13,
+      "true_negatives": 42626,
+      "precision": 0.46987951807228917,
+      "recall": 0.75,
+      "f1_score": 0.5777777777777777
+    }
+  ]
+}
