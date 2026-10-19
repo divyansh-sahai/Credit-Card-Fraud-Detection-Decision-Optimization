@@ -1,0 +1,28 @@
+
+# Raw dataset
+data/creditcard.csv
+
+# Trained model artifact
+models/*.joblib
+
+# SQLite database and temporary database files
+reports/*.db
+reports/*.db-journal
+
+# Python caches and compiled files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Pytest cache
+.pytest_cache/
+
+# Jupyter temporary files
+*.ipynb_checkpoints
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.env
