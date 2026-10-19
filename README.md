@@ -79,14 +79,13 @@ The dataset was audited for missing values, infinite values, unexpected target l
 The data was divided chronologically into training (199,364 transactions), validation (42,721 transactions), and test (42,722 transactions). These sets contained 384, 56, and 52 fraud cases, respectively. Exploratory analysis examined class imbalance, transaction amounts, temporal patterns, and differences in anonymized features. Visualizations were saved in `reports/figures/`.
 
 The chronological split reduces the risk of using future observations to train a model evaluated on earlier observations. However, the dataset's short time span remains a limitation.
-```
+``
 
 ## Model Development and Selection
 
 Four classification approaches were evaluated: a Dummy Classifier baseline, Logistic Regression, Random Forest, and XGBoost. Model comparison used ROC-AUC, Precision-Recall AUC (PR-AUC), precision, recall, and F1-score, with particular attention to the severe class imbalance.
 
 Random Forest was selected for the final decision workflow based on the validation results and the project's decision-making objectives. The decision threshold was subsequently assessed using validation data rather than selected using the final test results.
-```
 
 ## Model Evaluation and Results
 
@@ -105,7 +104,6 @@ The selected Random Forest model was evaluated on the held-out test set of 42,72
 | True negatives | 42,626 |
 
 The model detected 39 of the 52 fraud cases while incorrectly flagging 44 legitimate transactions. These results illustrate the trade-off between fraud detection and false-positive control in an imbalanced classification problem.
-```
 
 ## Fraud Decision Optimization and Cost Analysis
 
@@ -114,7 +112,6 @@ The decision threshold was optimized using validation data under different assum
 The final test-set results at threshold 0.10 included 13 missed fraud cases and 44 false positives. Under the illustrative cost assumptions of 10 units per missed fraud case and 1 unit per false positive, the estimated decision cost was 174 units.
 
 These values are simulated cost estimates, not actual monetary losses, recovered funds, or realized business savings. The analysis demonstrates how different risk preferences can influence threshold selection.
-```
 
 ## Model Monitoring and Drift Analysis
 
@@ -123,14 +120,12 @@ A reusable Python monitoring module was developed to summarize incoming predicti
 A controlled batch of 500 test transactions produced a 0% flagged-transaction rate. Several features generated PSI warnings, with `Time` showing the largest distribution shift. Because the dataset is divided chronologically and covers only a short period, these shifts must be interpreted in that context.
 
 The monitoring workflow also includes labelled performance evaluation and saved reports covering batch summaries, prediction logs, feature drift, and test-set performance. These experiments demonstrate offline monitoring capabilities; they do not establish live production drift or ongoing model deterioration.
-```
 
 ## SQL Analytics and Reporting
 
 SQLite was used to store 42,722 test-set transaction prediction records, including fraud probabilities, decision thresholds, predicted classifications, and known outcomes. Five SQL queries were developed to analyze overall classification performance, actual versus predicted fraud, transaction amount bands, illustrative decision costs, and fraud-score distributions.
 
 The resulting CSV reports are saved in `reports/sql/`. The database schema and analytical queries are available in `sql/schema.sql` and `sql/fraud_analytics.sql`. The database and reports support reproducible analysis of the model's decisions and their assumed cost implications.
-```
 
 ## FastAPI Prediction Service
 
@@ -143,7 +138,6 @@ A FastAPI application serves predictions using the saved Random Forest model. Th
 | `POST /predict` | Accepts transaction features and returns a fraud probability, classification, and threshold |
 
 The API validates required features and rejects missing or unexpected features, as well as negative transaction amounts or times. Interactive API documentation is available through FastAPI's `/docs` endpoint when the service is running locally.
-```
 
 ## Installation and Setup
 
@@ -152,7 +146,6 @@ The project was developed using Python through Anaconda and a dedicated Conda en
 Clone or download the repository, then open a terminal in the project directory. Create and activate a Python environment, and install the dependencies listed in `requirements.txt`.
 
 The raw Kaggle dataset and saved model artifact are excluded from GitHub. Download the dataset separately and place `creditcard.csv` in the `data/` directory. The trained model must be generated or supplied locally before running the API.
-```
 
 ## How to Run the Project
 
@@ -167,7 +160,6 @@ The raw Kaggle dataset and saved model artifact are excluded from GitHub. Downlo
 
 5. Open `http://127.0.0.1:8000/docs` to inspect and test the API.
 6. Use the SQL scripts in `sql/` to create the database schema and run the analytical queries after preparing the database records.
-```
 
 ## Automated Testing
 
@@ -188,7 +180,6 @@ python -m pytest tests/test_fraud_detection_api.py -v
 - The monitoring and SQL workflows demonstrate how prediction activity, feature distribution changes, classification outcomes, and decision costs can be analyzed systematically.
 
 These findings illustrate the practical trade-offs involved in fraud detection. They do not establish actual financial savings or production performance.
-```
 
 ## Limitations and Future Improvements
 
@@ -197,7 +188,6 @@ The dataset covers only approximately two days of historical transactions, and m
 The monitoring workflow uses controlled offline batches rather than a continuous production feed. The financial decision framework relies on assumed cost weights rather than observed chargeback losses or customer-retention costs.
 
 Future improvements could include evaluation on newer datasets, longer-term drift monitoring, more detailed cost modelling, explainability analysis, and deployment in a properly secured hosted environment.
-```
 
 ## Reproducibility and Data Access
 
@@ -208,72 +198,3 @@ https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 Download the dataset and place `creditcard.csv` inside the project's `data/` directory. The raw dataset, trained model artifact, and generated SQLite database are excluded from the repository and must be recreated or obtained separately.
 
 The repository includes the notebook, API source code, automated tests, monitoring module, SQL scripts, and analytical reports to document the workflow and support reproduction of the analysis.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
